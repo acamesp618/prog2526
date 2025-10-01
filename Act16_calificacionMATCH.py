@@ -22,3 +22,5 @@ match num:
         print("Sobresaliente")
     case 10:
         print("Sobresaliente")
+    case _:
+        print("Numero no valido")
