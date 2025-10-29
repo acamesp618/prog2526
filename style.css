@@ -1,3 +1,4 @@
+/* ======== ESTILOS GENERALES ======== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -5,6 +6,7 @@ body {
   color: #333;
 }
 
+/* ======== ENCABEZADO ======== */
 header {
   background-color: #004080;
   color: white;
@@ -12,17 +14,32 @@ header {
   text-align: center;
 }
 
-nav a, nav ul li a {
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
   color: white;
   text-decoration: none;
-  margin: 0 10px;
   font-weight: bold;
 }
 
-nav a:hover, nav ul li a:hover {
+nav ul li a:hover {
   text-decoration: underline;
 }
 
+/* ======== SECCIONES ======== */
 .seccion {
   padding: 40px 20px;
   max-width: 1000px;
@@ -36,6 +53,7 @@ nav a:hover, nav ul li a:hover {
   margin-bottom: 20px;
 }
 
+/* ======== TARJETAS ======== */
 .tarjetas {
   display: flex;
   flex-wrap: wrap;
@@ -65,6 +83,11 @@ nav a:hover, nav ul li a:hover {
   font-weight: bold;
 }
 
+.tarjeta a:hover {
+  text-decoration: underline;
+}
+
+/* ======== PIE DE PÁGINA ======== */
 footer {
   background-color: #004080;
   color: white;
@@ -73,7 +96,13 @@ footer {
   margin-top: 40px;
 }
 
+/* ======== RESPONSIVE ======== */
 @media (max-width: 600px) {
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
   .tarjetas {
     flex-direction: column;
     align-items: center;
