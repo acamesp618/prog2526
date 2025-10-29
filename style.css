@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+header {
+  background-color: #004080;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav a, nav ul li a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover, nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.seccion {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.seccion h2 {
+  color: #004080;
+  border-bottom: 2px solid #004080;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.tarjeta {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: scale(1.03);
+}
+
+.tarjeta a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #004080;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+  .tarjetas {
+    flex-direction: column;
+    align-items: center;
+  }
+}
