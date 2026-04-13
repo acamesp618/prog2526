@@ -12,26 +12,22 @@ public class ejercicio4 {
         // Crear ArrayList de Double
         ArrayList<Double> notas = new ArrayList<>();
 
-        // Conversión (Parsing) y añadir a la lista
+        // Conversión y añadir a la lista
+        Double sumaNotas = 0.0;
         for (String notaTexto : notasEntrada) {
-            Double nota = Double.parseDouble(notaTexto); // o Double.valueOf(notaTexto)
-            notas.add(nota);
+            notas.add(Double.valueOf(notaTexto)); //Añadimos en lista convirtiendolo a Double
+            sumaNotas = sumaNotas + Double.valueOf(notaTexto); // Sumamos todas las notas
         }
 
         // Mostrar notas convertidas
         System.out.println("Lista de notas: " + notas);
 
-        // 3. Cálculo de la media
-        double suma = 0.0;
+        // Cálculo de la media
+        double notaMedia = sumaNotas / notasEntrada.length;
 
-        for (Double nota : notas) {
-            suma += nota; // aquí ocurre el unboxing automáticamente
-        }
+        System.out.println("Nota media: " + notaMedia);
 
-        double media = suma / notas.size();
-        System.out.println("Nota media: " + media);
-
-        // 4. Filtrado de aprobados
+        // Filtrado de aprobados
         ArrayList<Double> aprobados = new ArrayList<>();
 
         for (Double nota : notas) {
