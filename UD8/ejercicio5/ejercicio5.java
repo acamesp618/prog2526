@@ -1,6 +1,8 @@
 package ejercicio5;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class ejercicio5 {
@@ -33,9 +35,18 @@ public class ejercicio5 {
 		Set<Integer> numerosEnteros2 = new HashSet<Integer>();
 		numerosEnteros2.add(2);
 		numerosEnteros2.add(3);
-		numerosEnteros.containsAll(numerosEnteros2);
+		
 		
 		//7. Declara una lista con el modificador final, inicializándola con los valores del primer conjunto.
+		final List<Integer> lista = new ArrayList<>(numerosEnteros);
+		
+		lista.add(10);
+		lista.remove(1);
+			//Podemos modificar el contenido
+		System.out.println(lista);
+		
+			//Lo que no podemos es asignar esa lista
+			// lista = new ArrayList();
 	}
 
 }
