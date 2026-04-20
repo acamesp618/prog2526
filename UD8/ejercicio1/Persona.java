@@ -59,7 +59,7 @@ public class Persona implements Comparable<Persona>{
 		Persona otra = (Persona) obj;
 		return nombre.equals(otra.nombre)
 		// para comparar dos personas con nombre y apellido igual
-		//&& apellido.equals(otra.apellido)
+		&& apellido.equals(otra.apellido)
 		;
 	}
 	
@@ -71,12 +71,12 @@ public class Persona implements Comparable<Persona>{
 	
 	// Metodo para comparar Personas
 	@Override
-	public int compareTo(Object o) {
+	public int compareTo(Persona o) {
 		// String p1 = ;
 		// String p2 = ;
 		
 		//p1.compareTo(p2)
-		return this.getNombre().compareTo(((Persona)o).getNombre());
+		return this.getNombre().compareTo(o.getNombre());
 	}
 	
 	// hashCode

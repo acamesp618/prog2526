@@ -9,7 +9,7 @@ public class ejercicio5 {
 
 	public static void main(String[] args) {
 		//1. Crea un conjunto vacío de números enteros
-		Set<Integer> numerosEnteros = new HashSet<Integer>();
+		Set<Integer> numerosEnteros = new HashSet<>();
 		
 		//2. Agrega los primeros 5 números naturales al conjunto
 		numerosEnteros.add(1);
@@ -35,7 +35,7 @@ public class ejercicio5 {
 		Set<Integer> numerosEnteros2 = new HashSet<Integer>();
 		numerosEnteros2.add(2);
 		numerosEnteros2.add(3);
-		
+		numerosEnteros.containsAll(numerosEnteros2);
 		
 		//7. Declara una lista con el modificador final, inicializándola con los valores del primer conjunto.
 		final List<Integer> lista = new ArrayList<>(numerosEnteros);

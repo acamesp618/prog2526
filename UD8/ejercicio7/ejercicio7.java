@@ -1,5 +1,6 @@
 package ejercicio7;
 
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -31,7 +32,7 @@ public class ejercicio7 {
 		
 		alumnos.add(null);
 		
-		System.out.println(alumnos); // Permite valores nulos
+		System.out.println(alumnos); // Permite valores nulos, pero solo 1 al no permitir duplicados
 		
 		// Recorre el conjunto imprimento sus elementos en orden
 		
@@ -41,7 +42,14 @@ public class ejercicio7 {
 		
 		// El LinkedHashSet mantiene el orden de inserción
 		// El HashSet no garantiza ningun orden, puede aparecer aleatorio
+		Set<String> alumnosHash = new HashSet<>();
+		alumnosHash.add("Adrian");
+		alumnosHash.add("Pedro");
+		alumnosHash.add("Luis");
+		alumnosHash.add("Ana");
+		alumnosHash.add("Cristina");
 		
+		System.out.println("List HashSet: " + alumnosHash);
 	}
 
 }
