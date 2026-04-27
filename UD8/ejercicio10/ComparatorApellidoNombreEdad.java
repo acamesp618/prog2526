@@ -23,6 +23,21 @@ public class ComparatorApellidoNombreEdad implements Comparator<Persona> {
 		} else {
 			return p1.getApellido().compareTo(p2.getApellido());
 		} 
-			
+		
+		//Simplificado
+		//@Override
+		//public int compare(Persona p1, Persona p2) {
+		    //int res = p1.getApellido().compareTo(p2.getApellido());
+		    
+		    //if (res == 0) {
+		        //res = p1.getNombre().compareTo(p2.getNombre());
+		    //}
+		    
+		    //if (res == 0) {
+		        //res = Integer.compare(p1.getEdad(), p2.getEdad());
+		    //}
+		    
+		    //return res;
+		//}
 	}
 }
