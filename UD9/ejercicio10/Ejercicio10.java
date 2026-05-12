@@ -25,7 +25,7 @@ public class Ejercicio10 {
 			//Leemos el fichero
 			FileReader fr = new FileReader(miFichero);
 			int unByte;
-			while ((unByte = fr.read()) != 1) {
+			while ((unByte = fr.read()) != -1) {
 				System.out.print(unByte + " ");
 			}
 			fr.close();
