@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuracion>
+    <base-datos motor="PostgreSQL">
+        <host>localhost</host>
+        <puerto>5432</puerto>
+        <usuario>admin</usuario>
+    </base-datos>
+</configuracion>
