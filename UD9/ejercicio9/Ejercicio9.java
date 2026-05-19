@@ -10,8 +10,6 @@ public class Ejercicio9 {
 		// Crear objeto File
 		File miFichero = new File("notas.txt");
 
-		try {
-
 			// Comprobar si existe
 			if (miFichero.exists()) {
 
@@ -21,20 +19,21 @@ public class Ejercicio9 {
 			} else {
 
 				System.out.println("El archivo no existe.");
-				
-				// Crear archivo automáticamente
-				if (miFichero.createNewFile()) {
-					System.out.println("Archivo creado correctamente.");
-					System.out.println("Ruta absoluta: " + miFichero.getAbsolutePath());
-				} else {
-					System.out.println("No se pudo crear el archivo.");
+				try {
+					// Crear archivo automáticamente
+					if (miFichero.createNewFile()) {
+						System.out.println("Archivo creado correctamente.");
+						System.out.println("Ruta absoluta: " + miFichero.getAbsolutePath());
+					} else {
+						System.out.println("No se pudo crear el archivo.");
+					}
+				}
+
+				catch (IOException e) {
+
+					System.out.println("Error al trabajar con el archivo.");
+					e.printStackTrace();
 				}
 			}
-
-		} catch (IOException e) {
-
-			System.out.println("Error al trabajar con el archivo.");
-			e.printStackTrace();
-		}
 	}
 }

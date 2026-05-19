@@ -8,7 +8,7 @@ public class Ejercicio6 {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("¿Cuantos años crees que vivirás?");
 		int edad = sc.nextInt(); // Lee un numero
-		sc.close();
+		
 		System.out.println("¿Cual es tu nombre?");
 		String nombre = sc.nextLine(); // Lee hasta que pulsamos intro
 		
