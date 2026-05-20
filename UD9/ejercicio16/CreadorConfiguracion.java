@@ -23,28 +23,31 @@ public class CreadorConfiguracion {
             // === FASE 2: Construir el árbol de Nodos/Elementos ===
             
             // TODO: Crear el elemento raíz <videojuego>
-            Element estudiantes = documento.createElement("videojuego");
+            Element raiz = documento.createElement("videojuego");
 
             // TODO: Añadirlo al documento
-            documento.appendChild(estudiantes);
+            documento.appendChild(raiz);
             
             // TODO: Crear el elemento <pantalla>
             Element pantalla = documento.createElement("pantalla");
             
             // TODO: asignarle atributo 
-
+            pantalla.setAttribute("resolucion", "FullHD");
+            
             // TODO: asignarle el texto interno
+            pantalla.setTextContent("true");
                      
             // ¡Crucial! Si no lo añades a la raíz, el nodo queda flotando en memoria
             raiz.appendChild(pantalla);
 
             // TODO: Crear el elemento <audio>, asignarle atributo y texto interno
             Element audio = documento.createElement("audio");
-            audio.setAttribute("volumen", "80");
+            audio.setAttribute("volumen", "55");
             audio.setTextContent("false");
             
             // TODO: Añadirlo al árbol en el lugar correcto
-
+            raiz.appendChild(audio);
+            
             // === FASE 3: El "Transformer" (Exportar memoria a archivo físico) ===
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
@@ -58,7 +61,7 @@ public class CreadorConfiguracion {
             StreamResult destino = new StreamResult(new File("juego_config.xml"));
 
             // TODO: Serializar utilizando el método transform del transformer
-
+            transformer.transform(origen, destino);
             System.out.println("¡Archivo XML generado con éxito de manera estructurada!");
 
         } catch (Exception e) {
