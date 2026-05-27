@@ -1,0 +1,32 @@
+package ejercicio2;
+
+
+import java.io.Serializable;
+
+public class Artista implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	private String nombre;
+    private String pais;
+
+    public Artista() {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+}
