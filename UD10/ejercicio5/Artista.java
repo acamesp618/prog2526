@@ -1,4 +1,4 @@
-package ejercicio4;
+package ejercicio5;
 
 
 import java.io.Serializable;

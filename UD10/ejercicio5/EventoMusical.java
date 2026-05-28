@@ -1,4 +1,4 @@
-package ejercicio4;
+package ejercicio5;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -6,14 +6,21 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.ElementCollection;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Transient;
 
+//Actividad 5
+@NamedQuery(
+		name = "EventoMusical.buscarPorNombre",
+        query = "SELECT e FROM EventoMusical e WHERE e.nombre = :nombre"
+)
+// -----
 @Entity
 public class EventoMusical implements Serializable {
 
@@ -21,15 +28,15 @@ public class EventoMusical implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(generator = "SecuenciaDe10en10", strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(generator = "Secuencia", strategy = GenerationType.SEQUENCE)
 	//Secuencia de 10 en 10
-	@SequenceGenerator(name = "SecuenciaDe10en10", allocationSize = 10)
+	@SequenceGenerator(name = "Secuencia", allocationSize = 10)
 	private Long id;
 	private String nombre;
 	private Date fecha;
 	private BigDecimal recaudacion;
 	private GeneroMusical genero;
-	@ElementCollection
+	@Embedded
 	private List<Artista> artistasConfirmados;
 	@Transient
 	private int control;
@@ -48,7 +55,7 @@ public class EventoMusical implements Serializable {
 		this.fecha = fecha;
 		this.recaudacion = recaudacion;
 		this.genero = genero;
-		//Actividad 4
+		// Actividad 4
 		artistasConfirmados = new ArrayList<>();
 	}
 	

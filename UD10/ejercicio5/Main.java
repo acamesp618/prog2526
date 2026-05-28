@@ -1,13 +1,15 @@
-package ejercicio4;
+package ejercicio5;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
-import ejercicio4.EventoMusical.GeneroMusical;
+import ejercicio5.EventoMusical.GeneroMusical;
 
 
 public class Main {
@@ -27,25 +29,50 @@ public class Main {
 		estopa.setPais("España");
 		conciertoEstopa.agregarArtista(estopa);
 		
-		// Actividad 4
+		Artista bisbal = new Artista();
+		bisbal.setNombre("David Bisbal");
+		bisbal.setPais("España");
+		conciertoBisbal.agregarArtista(bisbal);
+		
+		Artista badBunny = new Artista();
+		badBunny.setNombre("Bad Bunny");
+		badBunny.setPais("España");
+		conciertoBadBunny.agregarArtista(badBunny);
+		
 		//Abrir conexión
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("objectdb:$objectdb/db/eventos.odb");
 		EntityManager em = emf.createEntityManager();
 		
 		//Iniciatros la transaccion
-		em.getTransaction().begin();
+		//em.getTransaction().begin();
 		
 		//Operaciones
-		em.persist(conciertoEstopa);
+		//em.persist(conciertoEstopa);
+		//em.persist(conciertoBisbal);
 		
 		//Finalizar la transaccion: salvar la información
-		em.getTransaction().commit();
+		//em.getTransaction().commit();
+		
+		//ACTIVIDAD 5
+		//Imprime primer evento utilizando el identificador
+		EventoMusical evento1 = em.find(EventoMusical.class, 1);
+		System.out.println(evento1.getNombre());
+		
+		//Consulta Estatica
+		Query query = em.createNamedQuery("EventoMusical.buscarPorNombre");
+		
+		//Consulta Dinámica
+		Query query2 = em.createQuery("SELECT e FROM EventoMusical e WHERE e.nombre = :nombre");
+		
+		//Ejecucion
+		List<EventoMusical> lista = query.getResultList();
+		// ---------
 		
 		//Cerramos conexion
 		em.close();
 		emf.close();
 		
-		// -------
+		
 		
 		
 	}
