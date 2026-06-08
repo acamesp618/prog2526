@@ -14,7 +14,7 @@ Frame frame = new Frame("GridLayout");
 		frame.setSize(300, 250); // Ancho, Alto
 		frame.setVisible(true); // Por defecto es false y no se muestra
 		
-		frame.setLayout(new GridLayout());
+		frame.setLayout(new GridLayout(2, 2)); // Como queremos la malla (2x2)
 		
 		Button boton1 = new Button("Hola");
 		Button boton2 = new Button("Hola2");

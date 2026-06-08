@@ -16,15 +16,17 @@ public class EjemploBorderLayout {
 		
 		frame.setLayout(new BorderLayout());
 		
-		Button boton1 = new Button("Hola");
-		Button boton2 = new Button("Hola2");
-		Button boton3 = new Button("Hola3");
-		Button boton4 = new Button("Hola4");
+		Button boton1 = new Button("Arriba");
+		Button boton2 = new Button("Abajo");
+		Button boton3 = new Button("Derecha");
+		Button boton4 = new Button("Izquierda");
+		Button boton5 = new Button("Centro");
 		
-		frame.add(boton1);
-		frame.add(boton2);
-		frame.add(boton3);
-		frame.add(boton4);
+		frame.add(boton1, BorderLayout.NORTH); // La posicion se indica al hacer add
+		frame.add(boton2, BorderLayout.SOUTH);
+		frame.add(boton3, BorderLayout.EAST);
+		frame.add(boton4, BorderLayout.WEST);
+		frame.add(boton5, BorderLayout.CENTER);
 		
 	}
 

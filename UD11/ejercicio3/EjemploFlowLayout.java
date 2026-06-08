@@ -8,7 +8,7 @@ import java.awt.Frame;
 public class EjemploFlowLayout {
 
 	public static void main(String[] args) {
-Frame frame = new Frame("FlowLayout");
+		Frame frame = new Frame("FlowLayout");
 		
 		frame.setBackground(Color.LIGHT_GRAY);
 		frame.setSize(300, 250); // Ancho, Alto
